@@ -1,11 +1,11 @@
 package bankproject.feature.manager;
 
-import bankproject.WebHook;
-import bankproject.model.BankConstants;
-import bankproject.model.Customer;
-import bankproject.page_object_model.AddCustomerPage;
-import bankproject.page_object_model.ListCustomersPage;
-import bankproject.page_object_model.OpenAccountPage;
+import bankproject.automation.WebHook;
+import bankproject.automation.model.BankConstants;
+import bankproject.automation.model.Customer;
+import bankproject.automation.page_object_model.AddCustomerPage;
+import bankproject.automation.page_object_model.ListCustomersPage;
+import bankproject.automation.page_object_model.OpenAccountPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;

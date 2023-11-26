@@ -1,12 +1,12 @@
 package bankproject.feature.manager;
 
-import bankproject.WebHook;
-import bankproject.helper.junit.category.SmokeTests;
-import bankproject.model.BankConstants;
-import bankproject.page_object_model.CustomerAccountPage;
-import bankproject.page_object_model.CustomerLoginPage;
-import bankproject.page_object_model.HomePage;
-import bankproject.page_object_model.OpenAccountPage;
+import bankproject.automation.WebHook;
+import bankproject.automation.helper.junit.category.SmokeTests;
+import bankproject.automation.model.BankConstants;
+import bankproject.automation.page_object_model.CustomerAccountPage;
+import bankproject.automation.page_object_model.CustomerLoginPage;
+import bankproject.automation.page_object_model.HomePage;
+import bankproject.automation.page_object_model.OpenAccountPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;

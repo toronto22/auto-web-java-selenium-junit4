@@ -12,12 +12,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <allure.version>2.20.1</allure.version>
+        <allure.version>2.21.0</allure.version>
         <aspectj.version>1.9.9.1</aspectj.version>
         <slf4j.version>2.0.5</slf4j.version>
-        <junit.category.path>bankproject.helper.junit.category</junit.category.path>
+        <junit.category.path>bankproject.automation.helper.junit.category</junit.category.path>
     </properties>
 
     <dependencies>
@@ -39,14 +37,16 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10</version>
+            <version>2.10.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.6.0</version>
+            <version>4.15.0</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
         <dependency>
@@ -59,14 +59,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
+            <version>2.0.5</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.5</version>
+            <version>2.0.5</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -78,20 +77,19 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.0</version>
                     <configuration>
-                        <source>11</source>
-                        <target>11</target>
+                        <source>17</source>
+                        <target>17</target>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>3.2.2</version>
                     <configuration>
-                        <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                        <parallel>methods</parallel>
+                        <threadCount>3</threadCount>
                         <groups>${junit.category.path}.SmokeTests, ${junit.category.path}.RegressionTests</groups>
-                        <parallel>classes</parallel>
-                        <threadCountClasses>10</threadCountClasses>
-                        <useSystemClassLoader>false</useSystemClassLoader>
+
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
@@ -108,6 +106,7 @@
                             </property>
                         </systemProperties>
                     </configuration>
+
                     <dependencies>
                         <dependency>
                             <groupId>org.aspectj</groupId>
