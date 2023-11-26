@@ -26,7 +26,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - uses: browser-actions/setup-chrome@114976
+    - uses: browser-actions/setup-chrome@848897
     - run: chrome --version
     - name: Execute test
       run: mvn clean verify
