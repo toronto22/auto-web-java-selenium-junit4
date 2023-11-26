@@ -31,8 +31,8 @@ jobs:
         chrome-version: beta
         id: setup-chrome
     - run: |
-        echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
-        ${{ steps.setup-chrome.outputs.chrome-path }} --version
+        echo Installed chromium version: 848897
+        chrome --version
     - name: Execute test
       run: mvn clean verify
 
