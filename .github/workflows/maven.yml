@@ -28,7 +28,7 @@ jobs:
         cache: maven
     - uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: stable
+        chrome-version: 848897
         id: setup-chrome
     - run: chrome --version
     - name: Execute test
