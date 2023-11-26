@@ -26,13 +26,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: beta
-        id: setup-chrome
-    - run: |
-        echo Installed chromium version: 848897
-        chrome --version
+    - uses: browser-actions/setup-chrome@Stable
+    - run: chrome --version
     - name: Execute test
       run: mvn clean verify
 
