@@ -16,7 +16,7 @@ public class LocalDriverChrome implements Driver {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
+//        System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
 
         if (config.IsHeadless) {
             chromeOptions.addArguments("--headless");
