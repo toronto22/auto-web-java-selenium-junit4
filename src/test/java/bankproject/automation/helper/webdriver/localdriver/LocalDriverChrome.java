@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static bankproject.automation.model.DriverPath.CHROME_DRIVER_PATH;
 
 
 public class LocalDriverChrome implements Driver {
@@ -21,6 +20,9 @@ public class LocalDriverChrome implements Driver {
         if (config.IsHeadless) {
             chromeOptions.addArguments("--headless");
         }
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("no-sandbox");
         return new ChromeDriver(chromeOptions);
