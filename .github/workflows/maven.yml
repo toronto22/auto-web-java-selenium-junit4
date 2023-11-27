@@ -24,7 +24,6 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'
         cache: maven
     - uses: browser-actions/setup-chrome@v1
       with:
